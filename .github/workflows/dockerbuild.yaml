@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKER_USERNAME: ${{ secrets.docker_user }}
-      DOCKER_PASSWORD: ${{ secrets.docker_pass }}
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USER}}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASS}}
 
     steps:
       - name: Check out the repository
