@@ -1,0 +1,18 @@
+name: docker builder
+on:
+  workflow_dispatch:
+  env:
+    DOCKER_USERNAME: ${{ secrets.docker_user}}
+    DOCKER_PASSWORD: ${{ secrets.docker_pass}}
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v5
+
+      - name: get the repo
+        run: git clone https://github.com/zoglobek/tests.git
+      - name: Build the Docker image
+        run: docker build -t helloworld:latest .
+      - name: push 
